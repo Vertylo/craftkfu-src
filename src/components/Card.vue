@@ -1,9 +1,12 @@
 <template>
-  <div>
+  <div :class="(child === 3 && c.get) ? 'getIt':''">
     <div class="flex-box card" :class="((child === 1 || child === 3) && c.job !== 0) ? 'card-recipe':''">
       <div class="flex-box">
-        <div class="item-img" :style="'background-image:url('+require('../assets/img/items/'+c.img+'.png')+')'">
-
+        <div class="item-img flex-box" :style="'background-image:url('+require('../assets/img/items/'+c.img+'.png')+')'">
+          <p v-if="c.job !== 0 && c.upgrade">
+            <i class="fas fa-arrow-up"></i>
+          </p>
+          <p v-if="c.job !== 0 && c.nb > 1">x{{c.nb}}</p>
         </div>
         <div class="flex-col info">
           <div class="flex-box primary">
@@ -15,20 +18,24 @@
           <span v-if="c.job !== 0" class="secondary">
             {{store.txt.lvl[store.lang]}} {{c.lvl}} - {{store.jobs.find(x => x.id === c.job).name[store.lang]}}
           </span>
+          <span v-if="child === 2 && c.job === 0" class="secondary">
+            {{store.types.find(x => x.id === c.type).name[store.lang]}}
+          </span>
         </div>
       </div>
       <div class="right">
         <i v-if="(child === 1 || child === 3) && c.job !== 0 && c.ingredients.length > 1" class="fas fa-swatchbook" :title="store.txt.switch[store.lang]" @click.self.stop="c.switchRecipe()"></i>
         <input v-if="child === 1" type="number" v-model="val" min="1" max="999" @change="checkQt(c)">
-        <i v-if="child === 1" class="fas fa-chevron-circle-down" :style="!show ? 'transform:rotate(0.75turn)':''" :title="store.txt.showRecipe[store.lang]" @click.self.stop="show = !show"></i>
         <a v-if="child === 2" :href="store.txt.link[store.lang] + c.id + '-wakfu'" target="_blank" class="fas fa-link"></a>
+        <i v-if="c.job !== 0 && child === 3" :class="!c.get ? 'fas fa-thumbs-down':'fas fa-thumbs-up'" :title="store.txt.showRecipe[store.lang]" @click.self.stop="c.get = !c.get"></i>
+        <i v-if="child === 1" class="fas fa-chevron-circle-down" :style="!show ? 'transform:rotate(0.75turn)':''" :title="store.txt.showRecipe[store.lang]" @click.self.stop="show = !show"></i>
         <i v-if="child === 1" class="fas fa-times-circle" :title="store.txt.del1[store.lang] + c.name[store.lang] + store.txt.del2[store.lang]" @click.self.stop="store.list.remove(c)"></i>
         <i v-if="child === 0" class="fas fa-cart-arrow-down" :title="store.txt.addCraft1[store.lang] + c.name[store.lang] + store.txt.addCraft2[store.lang]" @click.self.stop="store.list.add(c)"></i>
       </div>
     </div>
     <template v-if="c.job !== 0">
       <animslide>
-        <div v-if="(child === 1 && show === true) || child === 3" class="card-little">
+        <div v-if="(child === 1 && show === true) || (child === 3 && !c.get)" class="card-little">
           <card :c="cr" :child="3" v-for="cr in c.ingredients[c.recipe]" :key="cr.id"></card>
         </div>
       </animslide>
@@ -51,7 +58,7 @@ export default {
   },
   methods: {
     checkQt(c) {
-      if (this.val <= 0 || this.val >= 999 || this.val === "") this.val = 1;
+      if (this.val <= 0 || this.val > 999 || this.val === "") this.val = 1;
       c.changeQt(this.val);
     }
   }
@@ -78,8 +85,19 @@ export default {
 
 .item-img {
   background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 35px;
   height: 35px;
+}
+
+.item-img p,
+.item-img i {
+  position: relative;
+  font-size: 0.7rem;
+  top: -3px;
+  left: -5px;
 }
 
 .info {
@@ -144,6 +162,10 @@ export default {
 
 .card-little img {
   width: 0.8rem;
+}
+
+.getIt {
+  filter: grayscale(100%);
 }
 </style>
 

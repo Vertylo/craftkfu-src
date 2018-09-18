@@ -60,7 +60,7 @@ class Store {
         noCraft: ["Aucun craft dans la liste...", "No craft...", "", ""],
         craft: ["craft", "craft", "craft", "craft"],
         slide: ["Tout montrer", "Show all", "", "Mostrar todos"],
-        erase: ["Tout effacer", "Reset all", "", "Apagar tudo"],
+        erase: ["Tout effacer", "Remove all", "", "Apagar tudo"],
         showRecipe: [
           "Montrer les composants",
           "Show recipe",
@@ -87,6 +87,150 @@ class Store {
           "Craftkfu é uma ferramenta feita por fãs e sem filiação com Ankama."
         ]
       },
+      types: [
+        { id: 1, name: ["Equipement", "Gear", "Equipo", "Equipamento"] },
+        { id: 101, name: ["Hache", "", "", ""] },
+        { id: 103, name: ["Anneau", "", "", ""] },
+        { id: 108, name: ["Baguette", "", "", ""] },
+        { id: 110, name: ["Epée", "", "", ""] },
+        { id: 111, name: ["Pelle", "", "", ""] },
+        { id: 112, name: ["Dague", "", "", ""] },
+        { id: 113, name: ["Bâton", "", "", ""] },
+        { id: 114, name: ["Marteau", "", "", ""] },
+        { id: 115, name: ["Aiguille", "", "", ""] },
+        { id: 117, name: ["Armures", "", "", ""] },
+        { id: 119, name: ["Bottes", "", "", ""] },
+        { id: 120, name: ["Amulette", "", "", ""] },
+        { id: 132, name: ["Cape", "", "", ""] },
+        { id: 133, name: ["Ceinture", "", "", ""] },
+        { id: 134, name: ["Casque", "", "", ""] },
+        { id: 136, name: ["Plastron", "", "", ""] },
+        { id: 138, name: ["Epaulettes", "", "", ""] },
+        { id: 189, name: ["Boucliers", "", "", ""] },
+        { id: 218, name: ["Sacs", "", "", ""] },
+        { id: 223, name: ["Epée à 2 mains", "", "", ""] },
+        { id: 253, name: ["Bâton à 2 mains", "", "", ""] },
+        { id: 254, name: ["Cartes", "", "", ""] },
+        {
+          id: 281,
+          name: [
+            "Récoltes du Mineur",
+            "Miner's Harvests",
+            "Colectas del minero",
+            "Colheitas do mineiro"
+          ]
+        },
+        {
+          id: 282,
+          name: [
+            "Récoltes du Trappeur",
+            "Trapper's Harvests",
+            "Colectas del peletero",
+            "Colheitas do caçador"
+          ]
+        },
+        {
+          id: 306,
+          name: [
+            "Récoltes du Forestier",
+            "Lumberjack's Harvests",
+            "Colectas del leñador",
+            "Colheitas do lenhador"
+          ]
+        },
+        {
+          id: 308,
+          name: [
+            "Récoltes du Pêcheur",
+            "Fisherman's Harvests",
+            "Colectas del pescador",
+            "Colheitas do pescador"
+          ]
+        },
+        {
+          id: 309,
+          name: [
+            "Récoltes du Paysan",
+            "Farmer's Harvests",
+            "Colectas del campesino",
+            "Colheitas do fazendeiro"
+          ]
+        },
+        {
+          id: 313,
+          name: [
+            "Récoltes de l'Herboriste",
+            "Herbalist's Harvests",
+            "Colectas del herbolario",
+            "Colheitas do herborista"
+          ]
+        },
+        { id: 322, name: ["Prison", "Prison", "Prisión", "Prisão"] },
+        { id: 419, name: ["Semences", "Seeds", "Semillas", "Sementes"] },
+        { id: 458, name: ["Autres", "Other", "Otros", "Outros"] },
+        {
+          id: 472,
+          name: [
+            "Consommables Divers",
+            "Miscellaneous Consumables",
+            "Consumibles varios",
+            "Consumíveis diversos"
+          ]
+        },
+        {
+          id: 531,
+          name: [
+            "Accessoires",
+            "Miscellaneous Drops",
+            "Drops varios",
+            "Itens ganhos diversos"
+          ]
+        },
+        {
+          id: 551,
+          name: [
+            "Objets de Quête",
+            "Quest Items",
+            "Objetos de misión",
+            "Itens de missão"
+          ]
+        },
+        { id: 559, name: ["Donjons", "", "", ""] },
+        {
+          id: 594,
+          name: [
+            "Nourriture de familiers",
+            "Pet Food",
+            "Comida para mascotas",
+            ""
+          ]
+        },
+        {
+          id: 646,
+          name: ["Emblème", "Emblem", "Emblema", "Alimentos de mascotes"]
+        },
+        { id: 682, name: ["Poudres", "Powders", "Polvo", "Pós"] },
+        { id: 683, name: ["Runes", "Runes", "Runas", "Runas"] },
+        {
+          id: 687,
+          name: [
+            "Fragments de Relique",
+            "Relic Fragments",
+            "Fragmentos de reliquias",
+            "Fragmentos de relíquias"
+          ]
+        },
+        {
+          id: 739,
+          name: [
+            "Sioupère-Glous",
+            "Souper-Glous",
+            "Superglús",
+            "Bonds, Super Bonds"
+          ]
+        },
+        { id: 747, name: ["Nourritures", "Food", "Comidas", "Alimentos"] }
+      ],
       plurial: function(testBool, str) {
         if (testBool) return str + "s";
         return str;

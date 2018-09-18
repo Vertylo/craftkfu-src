@@ -6,7 +6,7 @@
     <div class="section-body">
       <div class="toolbar flex-box">
         <p v-if="store.list.crafts.length === 0">{{store.txt.noCraft[store.lang]}}</p>
-        <p v-else>{{getQt}} {{store.txt.resource[store.lang]}}{{store.list.crafts.length > 1 ? "s":""}}</p>
+        <p v-else>{{getQt}} {{store.txt.resource[store.lang]}}{{getIng.length > 1 ? "s":""}}</p>
         <div v-if="store.list.crafts.length > 0">
           <a :href="dlCsv" :title="store.txt.exportCsv[store.lang]" download="shopping.csv" class="fas fa-file-excel icon"></a>
           <a :href="dlTxt" :title="store.txt.exportTxt[store.lang]" download="shopping.txt" class="fas fa-file-alt icon"></a>

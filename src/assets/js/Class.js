@@ -30,6 +30,7 @@ class Craft {
     this.nb = craft.nb;
     this.upgrade = craft.upgrade;
     this.recipe = 0;
+    this.get = false;
     this.ingredients = new Array(craft.ingredients.length);
     craft.ingredients.forEach((ings, i) => {
       this.ingredients[i] = [];
@@ -67,7 +68,7 @@ class Craft {
         let check = arr.find(x => x.id === mat.id);
         if (check === undefined) arr.push(new Ingredient(mat, mat.qt));
         else check.qt += mat.qt;
-      } else {
+      } else if (mat.get === false) {
         mat.getMats(arr);
       }
     });

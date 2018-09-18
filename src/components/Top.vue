@@ -4,25 +4,35 @@
       logo
     </div>
 
-    <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang" :class="'lang-' + store.lang" @click="getLang()">
-
+    <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang" :class="'lang-' + store.lang" @click.self.stop="show = !show">
+      <animslide>
+        <div class="ch-lang" v-if="show">
+          <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang lang-0" @click.self.stop="chLang(0)"></div>
+          <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang lang-1" @click.self.stop="chLang(1)"></div>
+          <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang lang-2" @click.self.stop="chLang(2)"></div>
+          <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang lang-3" @click.self.stop="chLang(3)"></div>
+        </div>
+      </animslide>
     </div>
   </header>
 </template>
 
 <script>
 import { store } from "../assets/js/Store";
+import animslide from "./Animslide";
 export default {
   name: "Top",
+  components: { animslide },
   data() {
     return {
-      store: store.state
+      store: store.state,
+      show: false
     };
   },
   methods: {
-    getLang() {
-      if (this.store.lang === 3) this.store.lang = 0;
-      else this.store.lang++;
+    chLang(id) {
+      this.store.lang = id;
+      this.show = !this.show;
       // localStorage.setItem("lang", this.store.lang);
     }
   }
@@ -42,10 +52,26 @@ header {
 }
 
 .lang {
-  background: blue;
+  position: relative;
   background-size: cover;
   width: 32px;
   height: 21px;
+}
+
+.ch-lang {
+  position: absolute;
+  background: #53c4b8;
+  width: 64px;
+  top: 50px;
+  right: -16px;
+  padding-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: none;
+}
+
+.ch-lang .lang {
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 .lang-0 {
