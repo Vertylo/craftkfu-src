@@ -8,7 +8,12 @@ class Store {
       jobs: [
         {
           id: -1,
-          name: ["Tous les métiers", "Every Job", "", "Todas as Profissões"]
+          name: [
+            "Tous les métiers",
+            "Every Job",
+            "Cada oficio",
+            "Todas as Profissões"
+          ]
         },
         { id: 71, name: ["Forestier", "Lumberjack", "Leñador", "Lenhador"] },
         {
@@ -50,30 +55,65 @@ class Store {
         { id: 7, name: ["Epique", "Epic", "Epico", "Épico"] }
       ],
       txt: {
-        searchTitle: ["Recherche", "Search", "", "Pesquisa"],
-        noResult: ["Aucun résultat...", "No result...", "", "No resultado..."],
-        result: ["résultat", "result", "", "resultado"],
-        addCraft1: ['Ajouter "', 'Add "', "", 'Adicionar "'],
-        addCraft2: ['" à la liste', '" to the list', "", '" a lista'],
-        lvl: ["Niv.", "Lv.", "", "Nív."],
-        step: ["Liste des recettes", "Recipes List", "", "Lista de Receitas"],
-        noCraft: ["Aucun craft dans la liste...", "No craft...", "", ""],
-        craft: ["craft", "craft", "craft", "craft"],
-        slide: ["Tout montrer", "Show all", "", "Mostrar todos"],
-        erase: ["Tout effacer", "Remove all", "", "Apagar tudo"],
+        searchTitle: ["Recherche", "Search", "Buscar", "Pesquisa"],
+        noResult: [
+          "Aucun résultat...",
+          "No result...",
+          "Sin resultado...",
+          "No resultado..."
+        ],
+        result: ["résultat", "result", "resultado", "resultado"],
+        addCraft1: ['Ajouter "', 'Add "', "Añadir", 'Adicionar "'],
+        addCraft2: ['" à la liste', '" to the list', "a la lista", '" a lista'],
+        lvl: ["Niv.", "Lv.", "Niv.", "Nív."],
+        step: [
+          "Liste des Recettes",
+          "Recipes List",
+          "Lista de Recetas",
+          "Lista de Receitas"
+        ],
+        noCraft: [
+          "Aucune recette dans la liste...",
+          "No craft...",
+          "Sin receta...",
+          "No receita.."
+        ],
+        craft: ["recette", "recipe", "receta", "receita"],
+        slide: ["Tout montrer", "Show all", "Mostrar todo", "Mostrar todos"],
+        erase: ["Tout effacer", "Remove all", "Eliminar todo", "Apagar tudo"],
         showRecipe: [
           "Montrer les composants",
           "Show recipe",
-          "",
-          "Mostrar componentes"
+          "Mostrar receta",
+          "Mostrar receita"
         ],
-        switch: ["Changer la recette", "Switch recipe", "", "Trocar receita"],
-        del1: ['Supprimer "', 'Remove "', "", 'Retirar "'],
-        del2: ['" de la liste', '" from the list', "", '" da lista'],
-        shop: ["Courses", "Shopping List", "", "Lista de Compras"],
-        resource: ["ressource", "resource", "", "recurso"],
-        exportCsv: ["Exporter en CSV", "Export to CSV", "", "Exportar em CSV"],
-        exportTxt: ["Exporter en TXT", "Export to TXT", "", "Exportar em TXT"],
+        switch: [
+          "Changer la recette",
+          "Switch recipe",
+          "Cambiar la receta",
+          "Trocar receita"
+        ],
+        del1: ['Supprimer "', 'Remove "', "Eliminar", 'Retirar "'],
+        del2: ['" de la liste', '" from the list', "de la lista", '" da lista'],
+        shop: [
+          "Courses",
+          "Shopping List",
+          "Lista de Compras",
+          "Lista de Compras"
+        ],
+        resource: ["ressource", "resource", "recurso", "recurso"],
+        exportCsv: [
+          "Exporter en CSV",
+          "Export to CSV",
+          "Exportar a CSV",
+          "Exportar em CSV"
+        ],
+        exportTxt: [
+          "Exporter en TXT",
+          "Export to TXT",
+          "Exportar a TXT",
+          "Exportar em TXT"
+        ],
         link: [
           "https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/",
           "https://www.wakfu.com/en/mmorpg/encyclopedia/resources/",
@@ -83,7 +123,7 @@ class Store {
         footer: [
           "Craftkfu est un outil non-officiel sans aucun lien avec Ankama, éditeur de WAKFU.",
           "Craftkfu is a fan made tool, not affiliated to Ankama Games.",
-          "",
+          "Craftkfu es una herramienta creada por fans, no está afiliada a ankama games.",
           "Craftkfu é uma ferramenta feita por fãs e sem filiação com Ankama."
         ]
       },
