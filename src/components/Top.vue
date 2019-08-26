@@ -104,7 +104,7 @@ export default {
 <style>
 header {
   background: #182a42;
-  border-bottom: 1px solid #03c0bc;
+  border-bottom: 1px solid #938ee1;
   width: 100%;
   height: 91px;
   padding: 0 60px;

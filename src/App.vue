@@ -222,7 +222,7 @@ section {
 }
 
 .section-head {
-  background: #53c4b8;
+  background: #938ee1;
   color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -246,7 +246,7 @@ section {
 
 footer {
   background-color: #182a42;
-  border-top: 1px solid #03c0bc;
+  border-top: 1px solid #938ee1;
   color: #ffe;
   text-align: center;
   white-space: pre-line;
