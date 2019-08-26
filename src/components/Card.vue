@@ -149,7 +149,7 @@ export default {
 }
 
 .card-recipe {
-  background: #bbebde;
+  background: #d8d1f1;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
@@ -213,7 +213,7 @@ export default {
 }
 
 .card-little {
-  border-left: #bbebde 2px solid;
+  border-left: #d8d1f1 2px solid;
   padding-left: 7px;
   padding-top: 5px;
   margin-top: -5px;
