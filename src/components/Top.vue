@@ -1,18 +1,77 @@
 <template>
   <header class="flex-box">
-    <div>
-      logo
+    <div class="logo">
+      <img :src="require('../assets/img/logo.png')" />
     </div>
 
-    <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang" :class="'lang-' + store.lang" @click.self.stop="show = !show">
-      <animslide>
-        <div class="ch-lang" v-if="show">
-          <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang lang-0" @click.self.stop="chLang(0)"></div>
-          <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang lang-1" @click.self.stop="chLang(1)"></div>
-          <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang lang-2" @click.self.stop="chLang(2)"></div>
-          <div :style="'background-image:url(' + require('../assets/img/lang.png') + ')'" class="lang lang-3" @click.self.stop="chLang(3)"></div>
-        </div>
-      </animslide>
+    <div class="header-right">
+      <div>
+        <a href="https://tools.methodwakfu.com/builder/">
+          <img
+            :src="require('../assets/img/icone-builder.png')"
+            width="40px"
+            height="40px"
+          />
+        </a>
+      </div>
+      <div>
+        <a href="https://methodwakfu.com/">
+          <img
+            :src="require('../assets/img/icone-reborn.png')"
+            width="40px"
+            height="40px"
+          />
+        </a>
+      </div>
+      <div
+        :style="
+          'background-image:url(' + require('../assets/img/lang.png') + ')'
+        "
+        class="lang"
+        :class="'lang-' + store.lang"
+        @click.self.stop="show = !show"
+      >
+        <animslide>
+          <div class="ch-lang" v-if="show">
+            <div
+              :style="
+                'background-image:url(' +
+                  require('../assets/img/lang.png') +
+                  ')'
+              "
+              class="lang lang-0"
+              @click.self.stop="chLang(0)"
+            ></div>
+            <div
+              :style="
+                'background-image:url(' +
+                  require('../assets/img/lang.png') +
+                  ')'
+              "
+              class="lang lang-1"
+              @click.self.stop="chLang(1)"
+            ></div>
+            <div
+              :style="
+                'background-image:url(' +
+                  require('../assets/img/lang.png') +
+                  ')'
+              "
+              class="lang lang-2"
+              @click.self.stop="chLang(2)"
+            ></div>
+            <div
+              :style="
+                'background-image:url(' +
+                  require('../assets/img/lang.png') +
+                  ')'
+              "
+              class="lang lang-3"
+              @click.self.stop="chLang(3)"
+            ></div>
+          </div>
+        </animslide>
+      </div>
     </div>
   </header>
 </template>
@@ -44,11 +103,30 @@ export default {
 
 <style>
 header {
-  background: #53c4b8;
+  background: #182a42;
+  border-bottom: 1px solid #03c0bc;
   width: 100%;
-  height: 80px;
+  height: 91px;
   padding: 0 60px;
   margin-bottom: 40px;
+}
+
+.logo {
+  width: 310px;
+  height: 60px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right div {
+  margin-left: 20px;
 }
 
 .lang {
@@ -60,7 +138,7 @@ header {
 
 .ch-lang {
   position: absolute;
-  background: #53c4b8;
+  background: #182a42;
   width: 64px;
   top: 50px;
   right: -16px;

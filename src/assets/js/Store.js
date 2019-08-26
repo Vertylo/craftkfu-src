@@ -121,7 +121,7 @@ class Store {
           "https://www.wakfu.com/pt/mmorpg/enciclopedia/recursos/"
         ],
         footer: [
-          "Craftkfu est un outil non-officiel sans aucun lien avec Ankama, éditeur de WAKFU.",
+          'WAKFU MMORPG : © 2019 Ankama Studio. Tous droits réservés.\n\n"MethodWakfu" et ses services dérivés sont des sites non-officiels sans aucun lien avec Ankama.',
           "Craftkfu is a fan made tool, not affiliated to Ankama Games.",
           "Craftkfu es una herramienta creada por fans, no está afiliada a ankama games.",
           "Craftkfu é uma ferramenta feita por fãs e sem filiação com Ankama."

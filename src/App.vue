@@ -1,5 +1,4 @@
 <template>
-
   <div class="app">
     <top />
     <div id="container">
@@ -9,10 +8,16 @@
     </div>
 
     <footer>
-      {{store.txt.footer[store.lang]}}
+      <p>
+        <img
+          src="https://tools.methodwakfu.com/assets/img/logo-method-main.webp"
+          width="228px"
+          height="40px"
+        />
+      </p>
+      <p>{{ store.txt.footer[store.lang] }}</p>
     </footer>
   </div>
-
 </template>
 
 <script>
@@ -157,7 +162,9 @@ html {
 }
 
 body {
-  background: #f0f3f6;
+  /* background: #f0f3f6; */
+  background-image: url("https://tools.methodwakfu.com/assets/img/background.jpg");
+  background-image: cover;
 }
 
 .app {
@@ -238,10 +245,16 @@ section {
 }
 
 footer {
-  background-color: #f9f9f9;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #182a42;
+  border-top: 1px solid #03c0bc;
+  color: #ffe;
   text-align: center;
+  white-space: pre-line;
   padding: 20px 30px;
   margin-top: 30px;
+}
+
+footer img {
+  margin-bottom: 10px;
 }
 </style>
