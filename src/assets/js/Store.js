@@ -269,7 +269,11 @@ class Store {
             "Bonds, Super Bonds"
           ]
         },
-        { id: 747, name: ["Nourritures", "Food", "Comidas", "Alimentos"] }
+        { id: 747, name: ["Nourritures", "Food", "Comidas", "Alimentos"] },
+        {
+          id: 811,
+          name: ["Enchantement", "Enchantment", "Encantamiento", "Encantamento"]
+        }
       ],
       plurial: function(testBool, str) {
         if (testBool) return str + "s";
