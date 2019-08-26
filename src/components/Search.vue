@@ -1,31 +1,71 @@
 <template>
   <section>
     <div class="section-head">
-      <h2>{{store.txt.searchTitle[store.lang]}}</h2>
+      <h2>{{ store.txt.searchTitle[store.lang] }}</h2>
     </div>
     <div class="section-body">
       <div class="flex-box">
-        <a href="" class="jobs flex-box" :class="select ? 'jobs-select':''" @click.prevent.stop="select = !select">
-          <p>{{store.jobs.find(x => x.id === job).name[store.lang]}}</p>
-          <div class="unclick" v-if="select" @click.self.prevent.stop="select = !select"></div>
+        <a
+          href=""
+          class="jobs flex-box"
+          :class="select ? 'jobs-select' : ''"
+          @click.prevent.stop="select = !select"
+        >
+          <p>{{ store.jobs.find(x => x.id === job).name[store.lang] }}</p>
+          <div
+            class="unclick"
+            v-if="select"
+            @click.self.prevent.stop="select = !select"
+          ></div>
           <animslide>
             <div class="jobs-options flex-col" v-if="select">
-              <a class="options flex-box" href="" v-for="j in store.jobs.filter(x => x.id !== job)" :key="j.id" @click.prevent.stop="changeJob(j.id)">
-                {{j.name[store.lang]}}
+              <a
+                class="options flex-box"
+                href=""
+                v-for="j in store.jobs.filter(x => x.id !== job)"
+                :key="j.id"
+                @click.prevent.stop="changeJob(j.id)"
+              >
+                {{ j.name[store.lang] }}
               </a>
             </div>
           </animslide>
         </a>
         <div class="flex-box lvl">
-          <input type="number" v-model="minLvl" min="0" :max="maxLvl" @change="checkLvl()">
-          <input type="number" v-model="maxLvl" :min="minLvl" max="130" @change="checkLvl()">
+          <input
+            type="number"
+            v-model="minLvl"
+            min="0"
+            :max="maxLvl"
+            @change="checkLvl()"
+          />
+          <input
+            type="number"
+            v-model="maxLvl"
+            :min="minLvl"
+            max="130"
+            @change="checkLvl()"
+          />
         </div>
       </div>
-      <input :placeholder="store.txt.searchTitle[store.lang] + '...'" type="text" v-model="search">
-      <p v-if="getResults.length === 0">{{store.txt.noResult[store.lang]}}</p>
-      <p v-else>{{getResults.length}} {{store.plurial(getResults.length > 1, store.txt.result[store.lang])}}</p>
+      <input
+        :placeholder="store.txt.searchTitle[store.lang] + '...'"
+        type="text"
+        v-model="search"
+      />
+      <p v-if="getResults.length === 0">{{ store.txt.noResult[store.lang] }}</p>
+      <p v-else>
+        {{ getResults.length }}
+        {{ store.plurial(getResults.length > 1, store.txt.result[store.lang]) }}
+      </p>
       <!-- <animlist> -->
-      <card :c="c" :child="0" v-for="(c, index) in getResults" :data-index="index" :key="c.id"></card>
+      <card
+        :c="c"
+        :child="0"
+        v-for="(c, index) in getResults"
+        :data-index="index"
+        :key="c.id"
+      ></card>
       <!-- </animlist> -->
     </div>
   </section>
@@ -104,7 +144,7 @@ input {
 .jobs-options a:focus,
 input:focus,
 .jobs-select {
-  border: 2px solid #53c4b8;
+  border: 2px solid #8681cd;
   padding-left: 9px;
 }
 
@@ -131,7 +171,7 @@ input[type="text"] {
   position: absolute;
   width: 100%;
   background: white;
-  border: 2px solid #53c4b8;
+  border: 2px solid #8681cd;
   top: 21px;
   left: 0;
 }
@@ -155,7 +195,7 @@ input[type="text"] {
 
 .options:focus,
 .options:hover {
-  background: #53c4b8;
+  background: #8681cd;
   color: white;
   padding-left: 6px;
 }
