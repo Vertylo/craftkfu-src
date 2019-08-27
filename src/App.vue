@@ -194,7 +194,7 @@ i,
 }
 
 i:hover {
-  color: #53c4b8;
+  color: #938ee1;
 }
 
 #container {
