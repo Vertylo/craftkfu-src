@@ -36,14 +36,18 @@ export default {
       lang: store.state.lang,
       store: store.state
     };
+  },
+  mounted() {
+    let query = window.location.search.substring(1);
+    let params = query.split(",");
+    let tmp = params.length;
+    for (let i = 0; i < tmp; i++) {
+      let t = data.filter(x => x.id === +params[i]);
+      if (t[0] && t[0].ingredients !== null) {
+        this.store.list.add(t[0]);
+      }
+    }
   }
-  // mounted() {
-  //   if (localStorage.getItem("crafts")) {
-  //     JSON.parse(localStorage.getItem("crafts")).forEach(el => {
-  //       store.state.list.add(data.find(x => x.id === el));
-  //     });
-  //   }
-  // },
   // watch: {
   //   crafts() {
   //     let exportCrafts = [];
