@@ -62,6 +62,12 @@ class Store {
           "Sin resultado...",
           "No resultado..."
         ],
+        sort: [
+          "Croissant/Décroissant",
+          "Ascending/Descending",
+          "Ascendente/Descendente",
+          "Crescente/Decrescente"
+        ],
         result: ["résultat", "result", "resultado", "resultado"],
         addCraft1: ['Ajouter "', 'Add "', "Añadir", 'Adicionar "'],
         addCraft2: ['" à la liste', '" to the list', "a la lista", '" a lista'],

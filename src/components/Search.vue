@@ -53,11 +53,23 @@
         type="text"
         v-model="search"
       />
-      <p v-if="getResults.length === 0">{{ store.txt.noResult[store.lang] }}</p>
-      <p v-else>
-        {{ getResults.length }}
-        {{ store.plurial(getResults.length > 1, store.txt.result[store.lang]) }}
-      </p>
+      <div class="flex-box">
+        <p v-if="getResults.length === 0">
+          {{ store.txt.noResult[store.lang] }}
+        </p>
+        <p v-else>
+          {{ getResults.length }}
+          {{
+            store.plurial(getResults.length > 1, store.txt.result[store.lang])
+          }}
+        </p>
+        <i
+          v-if="getResults.length !== 0"
+          :class="asc ? 'fas fa-arrow-circle-down' : 'fas fa-arrow-circle-up'"
+          :title="store.txt.sort[store.lang]"
+          @click.prevent.stop="asc = !asc"
+        ></i>
+      </div>
       <!-- <animlist> -->
       <card
         :c="c"
@@ -86,6 +98,7 @@ export default {
       minLvl: 0,
       maxLvl: 130,
       job: -1,
+      asc: true,
       select: false,
       search: ""
     };
@@ -93,21 +106,25 @@ export default {
   computed: {
     getResults() {
       if (this.search === "" && this.job === -1) return [];
-      return data
-        .filter(
-          x =>
-            x.job !== 0 &&
-            !this.store.list.crafts.find(z => z.id === x.id) &&
-            x.name[this.store.lang]
-              .toLowerCase()
-              .includes(this.search.toLowerCase()) &&
-            (this.job === -1 ? true : this.job === x.job) &&
-            x.lvl >= this.minLvl &&
-            x.lvl <= this.maxLvl
-        )
-        .sort(function(a, b) {
+      let research = data.filter(
+        x =>
+          x.job !== 0 &&
+          !this.store.list.crafts.find(z => z.id === x.id) &&
+          x.name[this.store.lang]
+            .toLowerCase()
+            .includes(this.search.toLowerCase()) &&
+          (this.job === -1 ? true : this.job === x.job) &&
+          x.lvl >= this.minLvl &&
+          x.lvl <= this.maxLvl
+      );
+      if (this.asc) {
+        return research.sort((a, b) => {
           return a.lvl - b.lvl;
         });
+      }
+      return research.sort((a, b) => {
+        return b.lvl - a.lvl;
+      });
     }
   },
   methods: {
