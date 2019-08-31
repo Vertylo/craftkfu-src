@@ -3,7 +3,7 @@ import { List } from "./Class";
 class Store {
   constructor() {
     this.state = {
-      lang: 0,
+      lang: 2,
       list: new List(),
       jobs: [
         {

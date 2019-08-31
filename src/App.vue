@@ -38,6 +38,17 @@ export default {
     };
   },
   mounted() {
+    let language = window.navigator.userLanguage || window.navigator.language;
+
+    if (language.includes("fr")) {
+      this.store.lang = 0;
+    } else if (language.includes("es")) {
+      this.store.lang = 2;
+    } else if (language.includes("pt")) {
+      this.store.lang = 3;
+    } else {
+      this.store.lang = 1;
+    }
     let query = window.location.search.substring(1);
     let params = query.split(",");
     let tmp = params.length;
