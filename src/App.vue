@@ -10,7 +10,7 @@
     <footer>
       <p>
         <img
-          src="https://tools.methodwakfu.com/assets/img/logo-method-main.webp"
+          src="https://builder.methodwakfu.com/assets/img/logo-method-main.webp"
           width="228px"
           height="40px"
         />
@@ -178,7 +178,7 @@ html {
 
 body {
   /* background: #f0f3f6; */
-  background-image: url("https://tools.methodwakfu.com/assets/img/background.jpg");
+  background-image: url("https://builder.methodwakfu.com/assets/img/background.jpg");
   background-image: cover;
 }
 

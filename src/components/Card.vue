@@ -8,7 +8,7 @@
         <div
           class="item-img flex-box"
           :style="
-            'background-image:url(\'https://exportoo.000webhostapp.com/wakfu/' +
+            'background-image:url(\'https://vertylo.github.io/wakassets/items/' +
               c.img +
               '.png\')'
           "
@@ -33,7 +33,8 @@
           </div>
           <span v-if="c.job !== 0" class="secondary">
             {{ store.txt.lvl[store.lang] }} {{ c.lvl }} -
-            {{ store.jobs.find(x => x.id === c.job).name[store.lang] }}
+            {{ store.jobs.find(x => x.id === c.job).name[store.lang] }} -
+            {{ c.xp }} XP
           </span>
           <span v-if="child === 2 && c.job === 0" class="secondary">
             {{ store.types.find(x => x.id === c.type).name[store.lang] }}

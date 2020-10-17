@@ -43,7 +43,7 @@
             type="number"
             v-model="maxLvl"
             :min="minLvl"
-            max="130"
+            max="140"
             @change="checkLvl()"
           />
         </div>
@@ -74,7 +74,7 @@
       <card
         :c="c"
         :child="0"
-        v-for="(c, index) in getResults"
+        v-for="(c, index) in showResults"
         :data-index="index"
         :key="c.id"
       ></card>
@@ -96,16 +96,20 @@ export default {
     return {
       store: store.state,
       minLvl: 0,
-      maxLvl: 130,
+      maxLvl: 140,
       job: -1,
       asc: true,
       select: false,
-      search: ""
+      search: "",
+      pos: 20,
     };
   },
   computed: {
     getResults() {
-      if (this.search === "" && this.job === -1) return [];
+      this.pos = 20
+      if (this.search === "" && this.job === -1) { 
+        return []
+      }
       let research = data.filter(
         x =>
           x.job !== 0 &&
@@ -124,7 +128,10 @@ export default {
       }
       return research.sort((a, b) => {
         return b.lvl - a.lvl;
-      });
+        });
+    },
+    showResults() {
+      return this.getResults.slice(0, this.pos)
     }
   },
   methods: {
@@ -137,12 +144,23 @@ export default {
       this.select = false;
     },
     checkLvl() {
-      if (this.minLvl < 0 || this.minLvl > 130 || this.minLvl === "") {
+      if (this.minLvl < 0 || this.minLvl > 140 || this.minLvl === "") {
         this.minLvl = 0;
-      } else if (this.maxLvl < 0 || this.maxLvl > 130 || this.maxLvl === "") {
-        this.maxLvl = 130;
+      } else if (this.maxLvl < 0 || this.maxLvl > 140 || this.maxLvl === "") {
+        this.maxLvl = 140;
       }
-    }
+    },
+    scroll() {
+      window.onscroll = () => {
+        let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+        if (bottomOfWindow) {
+          this.pos += 20
+        }
+      };
+    },
+  },
+  mounted() {
+    this.scroll();
   }
 };
 </script>

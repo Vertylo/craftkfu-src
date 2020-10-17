@@ -6,7 +6,7 @@
 
     <div class="header-right">
       <div>
-        <a href="https://tools.methodwakfu.com/builder/">
+        <a href="https://builder.methodwakfu.com/">
           <img
             :src="require('../assets/img/icone-builder.png')"
             width="40px"
